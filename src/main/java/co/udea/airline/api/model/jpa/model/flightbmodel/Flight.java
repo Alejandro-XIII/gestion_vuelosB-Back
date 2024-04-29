@@ -2,12 +2,9 @@ package co.udea.airline.api.model.jpa.model.flightbmodel;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
-import lombok.Data;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-
-import java.util.HashSet;
 import java.util.Set;
 
 

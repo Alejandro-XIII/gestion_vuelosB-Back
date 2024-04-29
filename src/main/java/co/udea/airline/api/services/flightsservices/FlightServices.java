@@ -59,7 +59,7 @@ public class FlightServices {
     public Flight addFlight(Flight flight) {
         Flight savedFlight = null;
         try {
-            savedFlight = flightRepository.save(flight);;
+            savedFlight = flightRepository.save(flight);
             Set<Scale> scales = flight.getScales();
             if (scales != null && !scales.isEmpty()) {
                 for (Scale scale : scales) {
