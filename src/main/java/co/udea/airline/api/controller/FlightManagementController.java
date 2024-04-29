@@ -30,9 +30,11 @@ import java.util.stream.Collectors;
 @Tag(name = "Flight Management", description = "Flight management operations")
 public class FlightManagementController {
 
-    private final FlightServices flightService;
+    @Autowired
+    private FlightServices flightService;
 
-    private final ModelMapper modelMapper;
+    @Autowired
+    private ModelMapper modelMapper;
 
     @GetMapping("/searchsflights")
     @Operation(summary = "Search all flights with all details")
