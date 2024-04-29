@@ -39,6 +39,14 @@ public class FlightServices {
     private final IFlightDetailsProjection flightDetailsProjection;
 
     @Autowired
+    public FlightServices(IFlightsRepository flightRepository,ScaleServices scaleServices,ModelMapper modelMapper,IFlightDetailsProjection flightDetailsProjection){
+        this.flightRepository = flightRepository;
+        this.scaleServices = scaleServices;
+        this.modelMapper = modelMapper;
+        this.flightDetailsProjection = flightDetailsProjection;
+    }
+
+    @Autowired
     private IScaleRespository scaleRepository;
     public List<Flight> searchFlights() {
         return flightRepository.findAll();
