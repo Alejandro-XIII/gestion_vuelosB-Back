@@ -30,18 +30,13 @@ import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 @Service
 public class FlightServices {
 
+    private final IFlightsRepository flightRepository;
 
-    @Autowired
-    private IFlightsRepository flightRepository;
+    private final ScaleServices scaleServices;
 
-    @Autowired
-    private ScaleServices scaleServices;
+    private final ModelMapper modelMapper;
 
-    @Autowired
-    private ModelMapper modelMapper;
-
-    @Autowired
-    private IFlightDetailsProjection flightDetailsProjection;
+    private final IFlightDetailsProjection flightDetailsProjection;
 
     @Autowired
     private IScaleRespository scaleRepository;

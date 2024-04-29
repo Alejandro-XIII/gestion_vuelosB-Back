@@ -30,11 +30,9 @@ import java.util.stream.Collectors;
 @Tag(name = "Flight Management", description = "Flight management operations")
 public class FlightManagementController {
 
-    @Autowired
-    private FlightServices flightService;
+    private final FlightServices flightService;
 
-    @Autowired
-    private ModelMapper modelMapper;
+    private final ModelMapper modelMapper;
 
     @GetMapping("/searchsflights")
     @Operation(summary = "Search all flights with all details")
@@ -45,8 +43,7 @@ public class FlightManagementController {
     public List<FlightDTO> searchFlight() {
         List<Flight> flights = flightService.searchFlights();
         List<FlightDTO> flightsDTO = flights.stream()
-                .map(flight -> modelMapper.map(flight, FlightDTO.class))
-                .collect(Collectors.toList());
+                .map(flight -> modelMapper.map(flight, FlightDTO.class)).toList();
         return flightsDTO;
     }
 
