@@ -1,0 +1,25 @@
+# Server properties
+server:
+  servlet:
+    context-path: /modulo-19
+  port: 8019
+# Spring properties
+spring:
+  # Dev is active by default. This value can be overwritten by java arg param
+  profiles:
+    active: dev
+  application:
+    name: sitas-api
+
+# OpenAPI properties
+airline-api:
+  openapi:
+    dev-url: http://localhost:8019/modulo-19
+    prod-url: https://codefact.udea.edu.co/modulo-19
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /docs
+    tagsSorter: alpha

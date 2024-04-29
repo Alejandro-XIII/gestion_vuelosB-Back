@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: modulo-vuelos-B-api
+    hostname: modulo-vuelos-B-api
+    ports:
+      - "8018:8019"
+    depends_on:
+      - db
+    environment:
+      DB_URL: jdbc:oracle:thin:@db:1521/XEPDB1
+      DB_USER: AIRLINE_ADMIN_B
+      DB_PASSWORD: SITAS
